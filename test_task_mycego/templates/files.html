@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Файлы Яндекс.Диска</title>
+</head>
+<body>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <h2>Список файлов</h2>
+    {% if files %}
+        <ul>
+            {% for file in files %}
+                <li>
+                    <a href="{{ file.download_url }}">Скачать {{ file.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Файлов не найдено.</p>
+    {% endif %}
+</body>
+</html>
